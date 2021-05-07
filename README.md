@@ -27,7 +27,7 @@ For more info try `help scalarsave` in Stata.
 
 ## Using with LaTeX
 
-Using `scalarsave` with the `datatools` and `filecontents` LaTeX packages can allow you to programmatically insert numbers into your academic papers. Once you create a delimited text file or csv with the numbers for your paper you can load it into LaTeX using these packages and refer to the numbers using their ids. For a full working example with Stata and LaTeX code see `latex_example`. 
+Using `scalarsave` with the `datatools` and `filecontents` LaTeX packages can allow you to programmatically insert numbers into your documents. Once you create a delimited text file or csv with the numbers for your paper you can load it into LaTeX using these packages and refer to the numbers using their ids. For a full working example with Stata and LaTeX code see `latex_example`. 
 
 Suppose you had your scalar file `scalars.csv` with the following information and you want these numbers to be in your paper.
 
