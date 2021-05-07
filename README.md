@@ -1,0 +1,2 @@
+# scalarsave
+ scalarsave Stata ado

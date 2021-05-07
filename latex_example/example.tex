@@ -1,0 +1,25 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc, color, parskip} % load some useful packages
+\usepackage{numprint}
+\usepackage{datatool, filecontents} % these packages are necessary for the text substitution
+\DTLsetseparator{,} % Set the separator between the columns. This must match the delimiter in your input files 
+
+% Load the scalar file
+\DTLloaddb[noheader, keys={thekey,thevalue}]{scalars}{scalars.csv}
+% LaTeX command to substitute numbers based on their "ids", will print undefined if no such
+% id exists
+\newcommand{\var}[1]{\DTLgetvalueforkey{\scalar}{thevalue}{scalars}{thekey}{#1}\DTLifstringeq{\scalar}{\string Undefined Value}{{\bf\color{red}\underline{undefined}}}{\numprint{\scalar}}}
+
+\npstyleenglish % use english formatting for numprint
+
+\begin{document}
+
+\begin{center}
+    {\Large\texttt{scalarsave}} {\bf\Large Example}
+\end{center}
+
+Number of observations is \var{n_observations}. The average price is \$\var{average_price}. Testing a fake key: \var{fake}. 
+
+If you update the \texttt{scalars.csv} file, the numbers will update when you recompile \LaTeX.
+
+\end{document}
